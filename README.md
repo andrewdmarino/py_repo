@@ -1,2 +1,2 @@
-# py_repo
- local repo for python hw
+# python_homework
+python homework for DU data anlysis
