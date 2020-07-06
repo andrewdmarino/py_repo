@@ -1,1 +1,3 @@
 total is 17107418 
+greatest monthly change is 1166643 
+greatest mnonthly loss is -1196225 
