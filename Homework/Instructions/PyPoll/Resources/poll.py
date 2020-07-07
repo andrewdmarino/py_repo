@@ -36,7 +36,7 @@ with open(csvpath) as csvfile:
             oleary_votes +=1
 
     total_votes = khan_votes+correy_votes+li_votes+oleary_votes
-    #output to terminal output / round up with math.ceil????
+    #output to terminal output / round up with math.ceil?
     print("khan votes = ", khan_votes) 
     print("khan won ", ((khan_votes/total_votes)*100), "percentage of votes")
     print("correy votes = ", correy_votes)
@@ -47,13 +47,19 @@ with open(csvpath) as csvfile:
     print("O'leary won", ((oleary_votes/total_votes)*100), "percentage of votes")
     print("total votes cast= ", total_votes)
 
-    csv_output = open(csv_folder / "data_file.txt", 'w')
-    total_text = f'total votes cast {total_votes} \n'
-    csv_output.write (total_text)
-    max_text = f'and the winner of the election with {khan_votes} votes is Khan\n'
-    csv_output.write (max_text)
-    min_text = f'greatest mnonthly loss is {max_loss} \n'
-    csv_output.write (min_text)     
+    
+
+csv_output = open(csv_folder / "data_file.txt", 'w')
+total_text = f'total votes cast {total_votes} \n'
+spacer_text =f'--------------------\n'
+csv_output.write(spacer_text)
+csv_output.write (total_text)
+csv_output.write(spacer_text)
+ 
+    
+winner_text = f'and the winner of the election with {khan_votes} votes is Khan\n'
+csv_output.write (winner_text)
+
 
 
  
