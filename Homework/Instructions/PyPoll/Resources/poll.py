@@ -47,6 +47,11 @@ with open(csvpath) as csvfile:
     print("O'leary won", ((oleary_votes/total_votes)*100), "percentage of votes")
     print("total votes cast= ", total_votes)
 
+    khan_percent = (round((khan_votes/total_votes)*100, 2)) 
+    #print(khan_percent)
+    correy_percent =((correy_votes/total_votes)*100)
+    li_percent = ((li_votes/total_votes)*100)
+    oleary_percent = ((oleary_votes/total_votes)*100)
     
 
 csv_output = open(csv_folder / "data_file.txt", 'w')
@@ -55,6 +60,8 @@ spacer_text =f'--------------------\n'
 csv_output.write(spacer_text)
 csv_output.write (total_text)
 csv_output.write(spacer_text)
+khan_text = int(khan_percent)
+csv.output = (khan_text)
  
     
 winner_text = f'and the winner of the election with {khan_votes} votes is Khan\n'
