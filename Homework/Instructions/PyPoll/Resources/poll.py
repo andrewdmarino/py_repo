@@ -1,6 +1,7 @@
 import os
 from pathlib import Path
 import csv
+import math
 
 csv_folder = Path("Homework/Instructions/PyPoll/Resources/")
 csvpath = Path( csv_folder / "election_data.csv")
@@ -12,7 +13,7 @@ with open(csvpath) as csvfile:
     county = []
     candidate = []
     khan_votes = 0
-    corey_votes = 0
+    correy_votes = 0
     li_votes = 0
     oleary_votes = 0
     total_votes = 0    
@@ -24,19 +25,27 @@ with open(csvpath) as csvfile:
         county = row[1]
         candidate = row[2]
         
-        #print (candidate) works 
+        #check matches by candidate name and add vote in loop od candidate list
         if candidate == 'Khan':
             khan_votes +=1 
         elif candidate == 'Correy': 
-            corey_votes +=1
+            correy_votes +=1
         elif candidate == 'Li':
             li_votes +=1
         else:
             oleary_votes +=1
-      
+
+    total_votes = khan_votes+correy_votes+li_votes+oleary_votes
+    #output to terminal output
     print("khan votes = ", khan_votes) 
-    print("correy votes = ", corey_votes)
+    print("khan won ", ((khan_votes/total_votes)*100), "percentage of votes")
+    print("correy votes = ", correy_votes)
+    print("correy won ", ((correy_votes/total_votes)*100), "percentage of votes")
     print("li votes = ", li_votes)
+    print("li won ", ((li_votes/total_votes)*100), "percentage of votes")
     print("oleary votes = ",oleary_votes)  
-    print("total votes = ", total_votes)
+    print("O'leary won", ((oleary_votes/total_votes)*100), "percentage of votes")
+    print("total votes cast= ", total_votes)
+
+
  
