@@ -7,6 +7,7 @@ csvpath = Path( csv_folder / "election_data.csv")
 
 with open(csvpath) as csvfile:
     my_csv = csv.reader(csvfile, delimiter = ',')
+    
     csv_header = next(my_csv)
     voter_id = []
     county = []
@@ -22,19 +23,19 @@ with open(csvpath) as csvfile:
         voter_id = row[0]
         county = row[1]
         candidate = row[2]
+
         #print (candidate) works 
-        if (candidate == 'Khan'):
+        if candidate == 'Khan':
             khan_votes +=1 
-            loop_ctr+=1
-        #elif (candidate == 'Corey'): 
-        #    corey_votes +=1
-        #elif (candidate == 'Li'):
-        #    li_votes + = 1
+        elif candidate == 'Correy': 
+            corey_votes +=1
+        elif candidate == 'Li':
+            li_votes +=1
         #else:
-        #    oleary_votes+ =1
-            
-    print(khan_votes) #2mill votes?
-    #print(corey_votes)
-    #print(li_votes)
-    #print(oleary_votes)  
-    print(loop_ctr)   
+           #oleary_votes+ =1
+          # print("!!!!")
+    print(khan_votes) 
+    print(corey_votes)
+    print(li_votes)
+    print(oleary_votes)  
+ 
