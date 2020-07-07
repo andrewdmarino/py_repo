@@ -17,36 +17,30 @@ diff_val=[] #
 
 with open(csvpath) as csvfile:
   my_csv = csv.reader(csvfile, delimiter = ',')
-  csv_headings = next(my_csv)#skip header
+  csv_headings = next(my_csv)
   #first_line = next(my_csv)
   month_col = [0]
   total_col = [1]
-  row_count = sum(1 for row in my_csv) #print(row_count) 86 rows of data after header
-  total = sum(1 for row in total_col)
-  total=sum(total_col)
-  print (total)
 
   for row in my_csv:
-     
-    max_val=max(total_col)#was working
-    min_val=min(total_col)#was working
-          
-    month_count = month_col.count(month_col)
-    print(month_count)
-    total=sum(total_col)
+    total_col.append(int(row[1]))
+    max_val=max(total_col)
+    min_val=min(total_col)
+    
+    month_count = (month_col.count)
+    
     current_val = int(row[1])
-    #next(my_csv)
-    #next_val = int(total_col)
-    #print(current_val, next_val)
+    #next_val = next(row[1])
+    
+    total=sum(total_col)
     #diff_val = (current_val-next_val)
     #print(current_val, next_val)
+   
     #total+= total_col
     #end loop actions
 csv_output = open(csv_folder / "data_file.txt", 'w')
-total_text = f'total of all months is {total} \n'
+total_text = f'total is {total} \n'
 csv_output.write (total_text)
-month_text = f'total months in table is {row_count} \n'
-csv_output.write (month_text)
 max_text = f'greatest monthly profit is {max_val} \n'
 csv_output.write (max_text)
 min_text = f'greatest mnonthly loss is {min_val} \n'
