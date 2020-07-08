@@ -66,6 +66,7 @@ csv_output.write(spacer_text)
 winner_text = f'...And the winner of the election with {khan_votes} votes is Khan with {khan_percent} percent of the total votes \n'
 csv_output.write (winner_text)
 
+#print to terminal
 print(total_text)
 print(khan_text)
 print(correy_text)
