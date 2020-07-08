@@ -36,12 +36,7 @@ with open(csvpath) as csvfile:
     total_profit = sum(profit_list)    
     max_profit=max(chg_list)
     min_profit=min(chg_list)
-    average_change=round(sum(chg_list)/(len(chg_list)), 2)
-    #print(average_change)
-    #print(max_profit)
-    #print(max_loss)
-    #print(total_profit)
-    
+    average_change=round(sum(chg_list)/(len(chg_list)), 2) 
   
 csv_output = open(csv_folder / "data_file.txt", 'w')
 months_text = f'number of months is {num_months} \n'
