@@ -3,23 +3,27 @@ from pathlib import Path
 import csv
 import math
 
+#path creation vars
 csv_folder = Path("Homework/Instructions/PyPoll/Resources/")
 csvpath = Path( csv_folder / "election_data.csv")
 
+#assign your reader, and inititiate vars and lists
 with open(csvpath) as csvfile:
     my_csv = csv.reader(csvfile, delimiter = ',')
     csv_header = next(my_csv)
     voter_id = []
     county = []
     candidate = []
+    #vote counters for candidates
     khan_votes = 0
     correy_votes = 0
     li_votes = 0
     oleary_votes = 0
+    #add up all votes
     total_votes = 0    
 
     print(csv_header)
-
+    #fill lists per col
     for row in my_csv:
         voter_id = row[0]
         county = row[1]
@@ -34,26 +38,17 @@ with open(csvpath) as csvfile:
             li_votes +=1
         else:
             oleary_votes +=1
-
-    total_votes = khan_votes+correy_votes+li_votes+oleary_votes
-    #output to terminal output / round to nearest % 
-    print("khan votes = ", khan_votes) 
-    print("khan recieved ", ((khan_votes/total_votes)*100), "percentage of votes")
-    print("correy votes = ", correy_votes)
-    print("correy recieved ", ((correy_votes/total_votes)*100), "percentage of votes")
-    print("li votes = ", li_votes)
-    print("li recieved ", ((li_votes/total_votes)*100), "percentage of votes")
-    print("O'leary recieved", ((oleary_votes/total_votes)*100), "percentage of votes")
-    print("total votes cast= ", total_votes)
-
+    #add all votes by lists of votes per candidate
+    total_votes = khan_votes+correy_votes+li_votes+oleary_votes 
+    #round the value to closest % with 2 decimals accuracy
     khan_percent = (round((khan_votes/total_votes)*100, 2)) 
     correy_percent =(round((correy_votes/total_votes)*100, 2))
     li_percent = (round((li_votes/total_votes)*100, 2))
     oleary_percent = (round((oleary_votes/total_votes)*100, 2))
     
-
 csv_output = open(csv_folder / "data_file.txt", 'w')
 
+#open txt file and then format f strings for the file and write to the text file as prescribed in HW
 total_text = f'total votes cast {total_votes} \n'
 spacer_text =f'--------------------\n'
 csv_output.write(spacer_text)
@@ -68,7 +63,12 @@ csv_output.write(li_text)
 oleary_text = f'Oleary received {oleary_percent} percent of the vote \n'
 csv_output.write(oleary_text)
 csv_output.write(spacer_text)
-winner_text = f'and the winner of the election with {khan_votes} votes is Khan with {khan_percent} percent of the total votes \n'
+winner_text = f'...And the winner of the election with {khan_votes} votes is Khan with {khan_percent} percent of the total votes \n'
 csv_output.write (winner_text)
 
-#should just print the text vars to terminal here
+print(total_text)
+print(khan_text)
+print(correy_text)
+print(li_text)
+print(oleary_text)
+print(winner_text)
