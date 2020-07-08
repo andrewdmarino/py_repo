@@ -1,7 +1,7 @@
 import os
 from pathlib import Path
 import csv
-import math
+import math #not needed for round()
 
 #path creation vars
 csv_folder = Path("Homework/Instructions/PyPoll/Resources/")

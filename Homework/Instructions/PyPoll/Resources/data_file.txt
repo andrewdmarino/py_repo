@@ -6,4 +6,4 @@ Correy received 20.0 percent of the vote
 Li received 14.0 percent of the vote 
 Oleary received 3.0 percent of the vote 
 --------------------
-and the winner of the election with 2218231 votes is Khan with 63.0 percent of the total votes 
+...And the winner of the election with 2218231 votes is Khan with 63.0 percent of the total votes 
